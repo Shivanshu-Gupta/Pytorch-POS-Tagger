@@ -32,8 +32,9 @@ def load_datasets():
 
 def save_params():
     os.makedirs(args.save_dir, exist_ok=True)
-    param_file = args.save_dir + '/' + 'params.pt'
-    torch.save(args, param_file)
+    param_file = args.save_dir + '/' + 'params.txt'
+    with open(param_file, 'w') as fout:
+        fout.write(args)
 
 
 if __name__ == '__main__':

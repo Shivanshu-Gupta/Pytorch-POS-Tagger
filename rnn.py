@@ -6,7 +6,7 @@ from torch import autograd
 
 class CustomRNN(nn.Module):
 
-    """A module that runs multiple steps of LSTM."""
+    """A module that implements an RNN using the given Cell type."""
 
     def __init__(self, cell_class, input_size, hidden_size,
                  use_bias=True, batch_first=False, **kwargs):

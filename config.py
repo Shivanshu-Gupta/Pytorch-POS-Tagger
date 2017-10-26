@@ -9,30 +9,24 @@ def parse_args():
     parser.add_argument('--data_dir', default='RNN_Data_files/', metavar='PATH')
     parser.add_argument('--save_dir', default='/home/cse/dual/cs5130298/scratch/checkpoints2/', metavar='PATH')
 
-    parser.add_argument('--rnn_class', default='lstm',
+    parser.add_argument('--rnn_class', choices=['lstm', 'gru', 'rnn', 'customgru'], default='lstm',
                         help='class of underlying RNN to use')
-    parser.add_argument('--reload', type=str, default='', metavar='PATH',
+    parser.add_argument('--reload', default='', metavar='PATH',
                         help='path to checkpoint to load (default: none)')
     parser.add_argument('--test', default=False, action='store_true',
                         help='test model on test set (use with --reload)')
 
-    parser.add_argument('--batch_size', default=1, type=int,
+    parser.add_argument('--batch_size', type=int, default=1,
                         help='batchsize for optimizer updates')
-    parser.add_argument('--epochs', default=1, type=int,
+    parser.add_argument('--epochs', type=int, default=1,
                         help='number of total epochs to run')
 
-    parser.add_argument('--lr', default=0.1, type=float,
+    parser.add_argument('--lr', type=float, default=0.1,
                         metavar='LR', help='initial learning rate')
     parser.add_argument('--step_size', type=int, default=10, metavar='N')
     parser.add_argument('--gamma', type=float, default=1)
 
-    # parser.add_argument('--wd', default=1e-4, type=float,
-    #                     help='weight decay (default: 1e-4)')
-    # parser.add_argument('--reg', default=1e-4, type=float,
-    #                     help='l2 regularization (default: 1e-4)')
-    # parser.add_argument('--optimizer', default='sgd',
-    #                     help='optimizer (default: sgd)')
-    parser.add_argument('--seed', default=123, type=int,
+    parser.add_argument('--seed', type=int, default=123,
                         help='random seed (default: 123)')
 
     args = parser.parse_args()

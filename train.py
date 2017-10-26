@@ -19,6 +19,7 @@ def get_ranges(lengths):
     return ranges
 
 
+# run one epoch of training
 def train(model, train_loader, criterion, optimizer, use_gpu=False):
     model.train()  # Set model to training mode
     running_loss = 0.0
