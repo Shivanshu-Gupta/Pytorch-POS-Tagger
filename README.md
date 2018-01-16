@@ -45,3 +45,4 @@ optional arguments:
 [Results.pdf] compares the results for LSTM, GRU and Vanilla RNN based POS Taggers on various metrics. The best accuracy of 96.12% was obtained using LSTM-based POS Tagger.
 
 [RNN_Data_files/]: https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/tree/master/RNN_Data_files
+[Results.pdf]: https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/Results.pdf
