@@ -3,7 +3,7 @@ import argparse
 
 def parse_args():
     print("parsing arguments")
-    parser = argparse.ArgumentParser(description='PyTorch TreeLSTM for Sentiment Analysis Trees')
+    parser = argparse.ArgumentParser(description='PyTorch Parts-of-Speech Tagger')
     parser.add_argument('--use_gpu', default=False, action='store_true')
 
     parser.add_argument('--data_dir', default='RNN_Data_files/', metavar='PATH')
