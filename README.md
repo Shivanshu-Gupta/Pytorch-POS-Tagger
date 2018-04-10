@@ -5,19 +5,31 @@ The purpose of this project was to learn how to implement RNNs and compare diffe
 2. a custom implementation of the RNN architecture that may be configured to be used as an *LSTM*, *GRU* or *Vanilla RNN*.
 3. a Parts-of-Speech tagger that can be configured to use any of the above custom RNN implementations.
 
-## Structure
-The code in the repository are organised as follows:
-- *gru.py*: custom GRU
-- *rnn.py*: custom RNN
-- *model.py*: POS Tagger Model
-- *train.py*: training/validation/testing code
-- *main.py*: driver code
+## Requirements
+- python 3.5
+- [pytorch](http://pytorch.org/)
+- [torchtext](https://github.com/pytorch/text)
 
-The dataset is in [RNN_Data_files/]. For dataloader, I used torchtext library.
+## Organisation
+The code in the repository are organised as follows:
+- [gru.py](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/gru.py): custom GRU
+- [rnn.py](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/rnn.py): custom RNN
+- [model.py](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/model.py): POS Tagger Model
+- [train.py](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/train.py): training/validation/testing code
+- [main.py](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/main.py): driver code
+
+The raw dataset is in [RNN_Data_files/].
 
 ## Usage
+### Preprocessing datasets
+Use [preprocess.sh](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/main.py) to generate tsv datasets containing sentences and POS tags in the intended *data_dir* (*RNN_Data_files/* here).
 ```sh
-usage: postagger.py [-h] [--use_gpu] [--data_dir PATH] [--save_dir PATH]
+$ ./preprocess.sh RNN_Data_files/train/sentences.tsv RNN_Data_files/train/tags.tsv RNN_Data_files/train_data.tsv
+$ ./preprocess.sh RNN_Data_files/val/sentences.tsv RNN_Data_files/val/tags.tsv RNN_Data_files/val_data.tsv
+```
+### Training/Testing
+```sh
+usage: main.py [-h] [--use_gpu] [--data_dir PATH] [--save_dir PATH]
                     [--rnn_class RNN_CLASS] [--reload PATH] [--test]
                     [--batch_size BATCH_SIZE] [--epochs EPOCHS] [--lr LR]
                     [--step_size N] [--gamma GAMMA] [--seed SEED]
@@ -27,7 +39,7 @@ PyTorch Parts-of-Speech Tagger
 optional arguments:
   -h, --help            show this help message and exit
   --use_gpu
-  --data_dir PATH
+  --data_dir PATH       directory containing train_data.tsv and val_data.tsv (default=RNN_Data_files/)
   --save_dir PATH
   --rnn_class RNN_CLASS
                         class of underlying RNN to use
