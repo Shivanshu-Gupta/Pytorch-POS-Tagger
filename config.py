@@ -6,7 +6,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='PyTorch Parts-of-Speech Tagger')
     parser.add_argument('--use_gpu', default=False, action='store_true')
 
-    parser.add_argument('--data_dir', default='RNN_Data_files/', metavar='PATH')
+    parser.add_argument('--data_dir', default='RNN_Data_files/', metavar='PATH',
+                       help='directory containing train_data.tsv and val_data.tsv')
     parser.add_argument('--save_dir', default='/home/cse/dual/cs5130298/scratch/checkpoints2/', metavar='PATH')
 
     parser.add_argument('--rnn_class', choices=['lstm', 'gru', 'rnn', 'customgru'], default='lstm',
