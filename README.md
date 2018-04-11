@@ -1,6 +1,6 @@
 # Parts-of-Speech Tagger
 
-The purpose of this project was to learn how to implement RNNs and compare different types of RNNs on the task of **Parts-of-Speech tagging** using a part of the *CoNLL-2012 dataset* with 42 possible tags. This repository contains:
+The purpose of this project was to learn how to implement RNNs and compare different types of RNNs on the task of **Parts-of-Speech tagging** using a part of the **CoNLL-2012 dataset** with 42 possible tags. This repository contains:
 1. a custom implementation of the *GRU cell*.
 2. a custom implementation of the RNN architecture that may be configured to be used as an *LSTM*, *GRU* or *Vanilla RNN*.
 3. a Parts-of-Speech tagger that can be configured to use any of the above custom RNN implementations.
@@ -54,7 +54,7 @@ optional arguments:
   --seed SEED           random seed (default: 123)
 ```
 ## Results
-[Results.pdf] compares the results for LSTM, GRU and Vanilla RNN based POS Taggers on various metrics. The best accuracy of 96.12% was obtained using LSTM-based POS Tagger.
+[Results.pdf] compares the results for LSTM, GRU and Vanilla RNN based POS Taggers on various metrics. The best accuracy of 96.12% was obtained using LSTM-based POS Tagger. The pretrained model can be downloaded from [here](https://drive.google.com/open?id=0By07sE0zY59RRnhVd1VjUURlSWs).
 
 [RNN_Data_files/]: https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/tree/master/RNN_Data_files
 [Results.pdf]: https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/Results.pdf
