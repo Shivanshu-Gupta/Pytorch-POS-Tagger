@@ -22,7 +22,7 @@ The raw dataset is in [RNN_Data_files/].
 
 ## Usage
 ### Preprocessing datasets
-Use [preprocess.sh](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/main.py) to generate tsv datasets containing sentences and POS tags in the intended *data_dir* (*RNN_Data_files/* here).
+Use [preprocess.sh](https://github.com/Shivanshu-Gupta/Pytorch-POS-Tagger/blob/master/preprocess.sh) to generate tsv datasets containing sentences and POS tags in the intended *data_dir* (*RNN_Data_files/* here).
 ```sh
 $ ./preprocess.sh RNN_Data_files/train/sentences.tsv RNN_Data_files/train/tags.tsv RNN_Data_files/train_data.tsv
 $ ./preprocess.sh RNN_Data_files/val/sentences.tsv RNN_Data_files/val/tags.tsv RNN_Data_files/val_data.tsv
